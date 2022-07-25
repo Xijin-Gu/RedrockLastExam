@@ -28,3 +28,9 @@ func VtoJ(v interface{})([]byte){
 	//将最后的字符串转化为byte类型
 	return []byte(rs2)
 }
+
+func JtoV(b []byte)string{
+	//将字符串替换回去
+	rs1 := strings.ReplaceAll(string(b),"\\\"","\"")
+	return rs1
+}
