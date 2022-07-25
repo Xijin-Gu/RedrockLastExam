@@ -1,3 +1,9 @@
+/**
+* @Author: gxj
+* @Data: 2022/7/26-3:19
+* @DESC:
+**/
+
 package jsone
 
 import (
@@ -6,7 +12,7 @@ import (
 )
 
 //VtoJ 将键值对转换为JSON格式
-func VtoJ(v interface{})([]byte){
+func VtoJ(v interface{}) []byte {
 	//首先将写入字符串
 	str := fmt.Sprintf("%#v",v)
 	//将字符串中的有用字段提取
@@ -29,6 +35,7 @@ func VtoJ(v interface{})([]byte){
 	return []byte(rs2)
 }
 
+//JtoV 将Json反序列化为字符串
 func JtoV(b []byte)string{
 	//将字符串替换回去
 	rs1 := strings.ReplaceAll(string(b),"\\\"","\"")
